@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>accordion</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    ul,li {list-style: none;}
+    a {text-decoration: none; color: #333;}
+
+    .container {
+      margin: 150px auto;
+      background-color: tan;
+      width: 800px;
+      height: 600px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .container .btn {
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+    }
+    .container .btn.close {
+      top: 100px;
+    }
+    .container .accordion.display {
+      display: none;
+    }
+    .container .accordion {
+      width: 70%;
+      height: 100%;
+      background-color: antiquewhite;
+    }
+    .container .accordion a {
+      color: red;
+      font-weight: bold;
+    }
+    .container .accordion .mainList {
+      border: 1px solid #ff0000;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .container > .accordion > .mainList > a {
+      display: block;
+      width: 100%;
+      line-height:50px;
+      background-color:lemonchiffon;
+    }
+    .mainList-inner {
+      display: none;
+    }
+    .container > .accordion > .mainList > .mainList-inner > .innerList > a {
+      display: block;
+      width: 100%;
+      line-height:30px;
+      background-color:lavender;
+    }
+    .container > .accordion > .mainList > .mainList-inner > .innerList {
+      border-bottom: 1px solid #333;
+      box-sizing: border-box;
+    }
+    .container .accordion .mainList .mainList-inner .innerList-inner {
+      display: none;
+      background-color: coral;
+    }
+  </style>
+  <script src="./main.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="btn click">클릭!</div>
+    <div class="btn close">닫기</div>
+
+    <ul class="accordion">
+      <li class="mainList"><a href="#">Main1</a>
+        <ul class="mainList-inner">
+          <li class="innerList"><a href="#">sub1_1</a></li>
+          <li class="innerList"><a href="#">sub1_2</a></li>
+          <li class="innerList"><a href="#">sub1_3</a></li>
+          <li class="innerList"><a href="#">sub1_4</a></li>
+        </ul>
+      </li>
+      <li class="mainList"><a href="#">Main2</a>
+        <ul class="mainList-inner">
+          <li class="innerList"><a href="#">sub2_1</a></li>
+          <li class="innerList"><a href="#">sub2_2</a></li>
+          <li class="innerList"><a href="#">sub2_3</a></li>
+          <li class="innerList"><a href="#">sub2_4</a></li>
+        </ul>
+      </li>
+      <li class="mainList"><a href="#">Main3</a>
+        <ul class="mainList-inner">
+          <li class="innerList"><a href="#">sub3_1</a></li>
+          <li class="innerList"><a href="#">sub3_2</a></li>
+          <li class="innerList"><a href="#">sub3_3</a></li>
+          <li class="innerList"><a href="#">sub3_4</a></li>
+        </ul>
+      </li>
+      <li class="mainList"><a href="#">Main4</a>
+        <ul class="mainList-inner">
+          <li class="innerList"><a href="#">sub4_1</a></li>
+          <li class="innerList"><a href="#">sub4_2</a></li>
+          <li class="innerList"><a href="#">sub4_3</a></li>
+          <li class="innerList"><a href="#">sub4_4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
+</body>
+</html>
