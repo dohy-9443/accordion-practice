@@ -37,13 +37,17 @@
     .container .btn.close {
       top: 100px;
     }
-    .container .accordion.display {
-      display: none;
-    }
     .container .accordion {
       width: 70%;
       height: 100%;
       background-color: antiquewhite;
+      position: absolute;
+      top: 0;
+      left: -70%;
+      transition: all 0.4s;
+    }
+    .container .accordion.display {
+      left: 0;
     }
     .container .accordion a {
       color: red;
@@ -63,6 +67,9 @@
     .mainList-inner {
       display: none;
     }
+    .container > .accordion > .mainList.open > .mainList-inner {
+      display: block;
+    }
     .container > .accordion > .mainList > .mainList-inner > .innerList > a {
       display: block;
       width: 100%;
@@ -72,10 +79,6 @@
     .container > .accordion > .mainList > .mainList-inner > .innerList {
       border-bottom: 1px solid #333;
       box-sizing: border-box;
-    }
-    .container .accordion .mainList .mainList-inner .innerList-inner {
-      display: none;
-      background-color: coral;
     }
   </style>
   <script src="./main.js"></script>

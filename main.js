@@ -1,23 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   const mainLists = document.querySelectorAll(".mainList");
-  const mainListUls = document.querySelectorAll(".mainList-inner");
+  const click = document.querySelector(".click");
+  const close = document.querySelector(".close");
+  const accordion = document.querySelector(".accordion");
 
-  function same(item) {
-    for (let i = 0; i < mainListUls.length; i++) {
-      if (i !== item) {
-        mainListUls.forEach((listUl, _) => {
-          listUl.style.display = "none";
-        });
+  click.addEventListener("click", () => {
+    accordion.classList.add("display");
+  });
+
+  close.addEventListener("click", () => {
+    accordion.classList.remove("display");
+  });
+
+  function closeAll(item) {
+    mainLists.forEach((mainList, _) => {
+      if (mainList !== item) {
+        mainList.classList.remove("open");
       }
-    }
+    });
   }
 
-  mainLists.forEach((lsit, item) => {
-    same(item);
-    lsit.addEventListener("click", function () {
-      mainListUls.forEach((listUl2, _) => {
-        listUl2.style.display = "block";
-      });
+  mainLists.forEach((item) => {
+    item.addEventListener("click", () => {
+      closeAll(item);
+      item.classList.toggle("open");
     });
   });
 });
